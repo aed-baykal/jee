@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "CalcServlet", urlPatterns = "/sum")
 public class CalcServlet extends HttpServlet {
 
-  // GET http://localhost:8080/jee/sum?a=10&b=20
+  // GET http://localhost:8080/jee/calc?a=10&b=20
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     PrintWriter out = resp.getWriter();

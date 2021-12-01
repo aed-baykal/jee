@@ -23,12 +23,14 @@ public class ProductListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
         resp.setContentType("text/html");
-        for (int i = 1; i < 11; i++) {
-            productList.add(new Product(i, "product" + i, 10.5f + i));
+        if (productList.isEmpty()) {
+            for (int i = 1; i < 11; i++) {
+                productList.add(new Product(i, "product" + i, 10.5f + i));
+            }
         }
         out.println("<html><body><h5>");
-        for (int i = 0; i < 10; i++) {
-            out.println("<p>" + String.format("%d %s %.2f", productList.get(i).getId(), productList.get(i).getTitle(), productList.get(i).getCost()) + "</p>");
+        for (Product product : productList) {
+            out.println("<p>" + String.format("%d %s %.2f", product.getId(), product.getTitle(), product.getCost()) + "</p>");
         }
         out.println("</h5></body></html>");
         out.close();

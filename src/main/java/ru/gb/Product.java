@@ -3,7 +3,17 @@ package ru.gb;
 public class Product {
     private Integer id;
     private String title;
-    private Double cost;
+    private Float cost;
+
+    public Product(Integer id, String title, Float cost) {
+        this.id = id;
+        this.title = title;
+        this.cost = cost;
+    }
+
+    public Product() {
+
+    }
 
     public Integer getId() {
         return id;
@@ -21,11 +31,11 @@ public class Product {
         this.title = title;
     }
 
-    public Double getCost() {
+    public Float getCost() {
         return cost;
     }
 
-    public void setCost(Double cost) {
+    public void setCost(Float cost) {
         this.cost = cost;
     }
 }
